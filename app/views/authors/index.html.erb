@@ -1,0 +1,29 @@
+<h1> Escritores </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>Pais</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @authors.each do |author| %>
+            <tr>
+                <td><%= author.nome %></td>
+                <td><%= author.ano %></td>
+                <td><%= author.pais %></td>
+                <td><%= link_to 'Mostrar', author %></td>
+                <td><%= link_to 'Editar', edit_author_path(author) %></td>
+                <td><%= link_to 'Apagar', author, method: :delete, data: { confirm: 'Tem certeza disso?'} %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo escritor', new_author_path %>

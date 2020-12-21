@@ -1,0 +1,17 @@
+<p>
+    <strong>Nome:</strong>
+    <%= @author.nome %>
+</p>
+
+<p>
+    <strong>Ano:</strong>
+    <%= @author.ano %>
+</p>
+
+<p>
+    <strong>Pais:</strong>
+    <%= @author.pais %>
+</p>
+
+<%= link_to 'Editar', edit_author_path(@author) %>
+<%= link_to 'Voltar', authors_path %>
